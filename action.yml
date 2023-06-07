@@ -10,6 +10,6 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: echo "string=${{ inputs.string-to-print }}."" >> $GITHUB_OUTPUT
+    - run: echo "string=${{ inputs.string-to-print }}." >> $GITHUB_OUTPUT
       id: step1
       shell: bash
