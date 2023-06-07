@@ -5,8 +5,11 @@ inputs:
     description: 'String to print'
     required: true
     default: 'This is the default string'
+outputs:
+  output1: ${{ steps.step1.outputs.string }}
 runs:
   using: "composite"
   steps:
-    - run: echo ${{ inputs.string-to-print }}.
+    - run: echo "string=${{ inputs.string-to-print }}."" >> $GITHUB_OUTPUT
+      id: step1
       shell: bash
